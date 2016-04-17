@@ -128,12 +128,12 @@ public class BeanGame extends Application{
 				P = srand.nextInt(2);
 				if (P == 0)
 				{
-					x-=11.5;
+					x-=12;
 					ball.relocate(x, y);
 				}
 				else
 				{
-					x+=11.5;
+					x+=12;
 					ball.relocate(x, y);
 				}
 			}
