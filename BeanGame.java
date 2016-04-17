@@ -86,6 +86,28 @@ public class BeanGame extends Application{
 		primaryStage.setScene(scene);
 		primaryStage.setResizable(false); 
 		primaryStage.show();
+		
+		//add the button that invoke the bean game
+		Button bt = new Button("Press");
+		bt.setLayoutX(155);
+		bt.setLayoutY(280);
+		bt.setPrefSize(100,20);
+		p.getChildren().add(bt);
+		
+		//set the action that the bean game can work
+		bt.setOnAction(e ->{
+			
+				Circle ball = new Circle(3);
+				Color  co = new Color(Math.random(),Math.random(),Math.random(),0.6);
+				ball.setFill(co);
+				
+				p.getChildren().add(ball);
+				ball.relocate(200,45);
+				tl(ball);
+				
+				
+		});
+	}	
 	}
 	public static void main (String[] args){
 		launch(args);
