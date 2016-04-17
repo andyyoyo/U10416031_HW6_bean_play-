@@ -108,6 +108,38 @@ public class BeanGame extends Application{
 				
 		});
 	}	
+	
+	//set the method that the way which balls fall
+	void tl(Circle ball){
+		Timeline animation = new Timeline(
+		new KeyFrame(Duration.millis(10),e->move(ball)));
+		animation.setCycleCount(Timeline.INDEFINITE);
+		animation.play();
+	}
+	void move(Circle ball){
+		SecureRandom srand = new SecureRandom();
+		int x, y, P;
+		x = (int)ball.getLayoutX() - (int)ball.getRadius();
+		y = (int)ball.getLayoutY() - (int)ball.getRadius() + 1; 
+		if (y <=230)
+		{
+			if (y == 50 || y == 75 || y == 100 || y == 125 || y == 150 || y == 175 || y ==200)
+			{
+				P = srand.nextInt(2);
+				if (P == 0)
+				{
+					x-=11.5;
+					ball.relocate(x, y);
+				}
+				else
+				{
+					x+=11.5;
+					ball.relocate(x, y);
+				}
+			}
+			else
+				ball.relocate(x, y);
+		}
 	}
 	public static void main (String[] args){
 		launch(args);
